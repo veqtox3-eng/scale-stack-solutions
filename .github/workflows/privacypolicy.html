@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | ScaleStack Solutions</title>
+<meta name="description" content="ScaleStack Solutions Privacy Policy - Learn how we protect and handle your data with complete transparency.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a0e27;
+    --navy-mid: #0d1233;
+    --navy-light: #141942;
+    --purple: #6c3cf7;
+    --purple-light: #8b5cf6;
+    --cyan: #22d3ee;
+    --cyan-light: #67e8f9;
+    --white: #ffffff;
+    --gray-soft: #94a3b8;
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+
+  /* ── Animated BG grid ── */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(108,60,247,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(108,60,247,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* ── Glass card ── */
+  .glass {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* ── Gradient text ── */
+  .grad-text {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Glow orbs ── */
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: pulse-orb 6s ease-in-out infinite;
+  }
+  @keyframes pulse-orb {
+    0%,100% { opacity: 0.4; transform: scale(1); }
+    50%      { opacity: 0.7; transform: scale(1.1); }
+  }
+
+  /* ── Float animation ── */
+  @keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50%      { transform: translateY(-12px); }
+  }
+  .float { animation: float 4s ease-in-out infinite; }
+  .float-slow { animation: float 6s ease-in-out infinite; }
+
+  /* ── Fade in up ── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Accordion ── */
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+  }
+  .accordion-content.open {
+    max-height: 1000px;
+  }
+  .accordion-icon {
+    transition: transform 0.3s ease;
+  }
+  .accordion-icon.open {
+    transform: rotate(180deg);
+  }
+
+  /* ── Stat card hover ── */
+  .stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(108,60,247,0.25);
+    border-color: rgba(108,60,247,0.4);
+  }
+
+  /* ── Overview card hover ── */
+  .overview-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: default;
+  }
+  .overview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 64px rgba(34,211,238,0.12);
+    border-color: rgba(34,211,238,0.3);
+  }
+
+  /* ── Service card hover ── */
+  .service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(108,60,247,0.2);
+    border-color: rgba(108,60,247,0.35);
+  }
+
+  /* ── CTA button ── */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple) 0%, #4f46e5 100%);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(108,60,247,0.45);
+    opacity: 0.92;
+  }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-2px);
+  }
+
+  /* ── Sticky TOC ── */
+  #toc-desktop {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+  #toc-desktop::-webkit-scrollbar { width: 3px; }
+  #toc-desktop::-webkit-scrollbar-thumb { background: rgba(108,60,247,0.4); }
+
+  .toc-link {
+    color: var(--gray-soft);
+    font-size: 0.8rem;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: block;
+    padding: 6px 0 6px 12px;
+    border-left: 2px solid transparent;
+    text-decoration: none;
+  }
+  .toc-link:hover, .toc-link.active {
+    color: var(--cyan);
+    border-left-color: var(--cyan);
+  }
+
+  /* ── Navbar ── */
+  #navbar {
+    transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+  }
+  #navbar.scrolled {
+    background: rgba(9,12,35,0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  }
+
+  /* ── Mobile menu ── */
+  #mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  #mobile-menu.open {
+    max-height: 400px;
+  }
+
+  /* ── FAQ accordion ── */
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .faq-content.open {
+    max-height: 300px;
+  }
+
+  /* ── Stagger delay ── */
+  .delay-100 { transition-delay: 0.1s; }
+  .delay-200 { transition-delay: 0.2s; }
+  .delay-300 { transition-delay: 0.3s; }
+  .delay-400 { transition-delay: 0.4s; }
+  .delay-500 { transition-delay: 0.5s; }
+  .delay-600 { transition-delay: 0.6s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body class="bg-grid">
+
+<!-- ══════════════════════════════════════
+     NAVBAR — matches homepage exactly
+══════════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <span class="text-xl font-extrabold tracking-tight">
+        <span class="text-white">Scale</span><span style="background:linear-gradient(90deg,#22d3ee,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Stack</span>
+      </span>
+    </a>
+
+    <!-- Desktop nav links — centred like homepage -->
+    <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+      <a href="services.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Services</a>
+      <a href="index.html#pricing"  class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Pricing</a>
+      <a href="process.html"  class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Process</a>
+      <a href="contact.html"  class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Contact</a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <a href="index.html#contact" class="hidden md:inline-flex items-center gap-1 btn-primary text-white text-sm font-bold px-5 py-2.5 rounded-xl">
+      Book Free Call →
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button id="hamburger" class="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1" aria-label="Toggle menu">
+      <span class="w-full h-[2px] bg-white rounded block transition-all duration-300" id="h1"></span>
+      <span class="w-full h-[2px] bg-white rounded block transition-all duration-300" id="h2"></span>
+      <span class="w-full h-[2px] bg-white rounded block transition-all duration-300" id="h3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="md:hidden overflow-hidden">
+    <div class="mx-0 mt-3 glass rounded-2xl px-5 py-4 flex flex-col gap-1">
+      <a href="index.html"          class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Home</a>
+      <a href="services.html" class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Services</a>
+      <a href="index.html#pricing"  class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Pricing</a>
+      <a href="process.html"  class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Process</a>
+      <a href="contact.html"  class="text-sm font-medium text-slate-300 hover:text-white py-3 transition-colors">Contact</a>
+      <a href="index.html#contact"  class="btn-primary text-white text-sm font-bold px-5 py-3 rounded-xl text-center mt-3">Book Free Call →</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 1 · HERO
+══════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+  <!-- Orbs -->
+  <div class="orb w-96 h-96 top-0 -left-32" style="background:rgba(108,60,247,0.35);animation-delay:0s"></div>
+  <div class="orb w-80 h-80 bottom-10 -right-24" style="background:rgba(34,211,238,0.2);animation-delay:2s"></div>
+  <div class="orb w-64 h-64 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="background:rgba(79,70,229,0.15);animation-delay:4s"></div>
+
+  <!-- Floating glass cards (decorative) -->
+  <div class="absolute top-32 right-4 sm:right-16 glass rounded-2xl p-3 float" style="animation-delay:0.5s;z-index:2">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(34,211,238,0.2)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-white">SSL Secured</p>
+        <p class="text-xs text-slate-400">256-bit encryption</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-32 left-4 sm:left-16 glass rounded-2xl p-3 float-slow" style="animation-delay:1.5s;z-index:2">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(108,60,247,0.25)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c3cf7" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      </div>
+      <div>
+        <p class="text-xs font-semibold text-white">GDPR Aligned</p>
+        <p class="text-xs text-slate-400">Your rights protected</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    <!-- Eyebrow -->
+    <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6 fade-up">
+      <div class="w-2 h-2 rounded-full animate-pulse" style="background:var(--cyan)"></div>
+      <span class="text-sm font-medium" style="color:var(--cyan)">Privacy &amp; Security</span>
+    </div>
+
+    <!-- Shield SVG illustration -->
+    <div class="flex justify-center mb-8 fade-up delay-100">
+      <div class="relative">
+        <svg width="100" height="110" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" class="float">
+          <defs>
+            <linearGradient id="shieldGrad" x1="0" y1="0" x2="100" y2="110" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#22d3ee"/>
+              <stop offset="100%" stop-color="#6c3cf7"/>
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <path d="M50 5L90 20V55C90 78 70 97 50 105C30 97 10 78 10 55V20L50 5Z" fill="url(#shieldGrad)" fill-opacity="0.15" stroke="url(#shieldGrad)" stroke-width="2" filter="url(#glow)"/>
+          <path d="M50 18L78 30V55C78 72 65 86 50 93C35 86 22 72 22 55V30L50 18Z" fill="url(#shieldGrad)" fill-opacity="0.1"/>
+          <path d="M38 55l8 8 16-16" stroke="url(#shieldGrad)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 fade-up delay-200">
+      Your Data Deserves<br>
+      <span class="grad-text">Transparency</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 fade-up delay-300">
+      At ScaleStack Solutions, protecting your information is a priority. We believe in transparency, security, and responsible data handling — because trust is the foundation of everything we build.
+    </p>
+
+    <!-- CTA -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up delay-400">
+      <a href="contact.html" class="btn-primary text-white font-semibold px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">Contact Us</a>
+      <a href="#overview" class="btn-outline text-white font-medium px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">Read Policy ↓</a>
+    </div>
+
+    <!-- Last updated -->
+    <p class="text-slate-500 text-xs mt-8 fade-up delay-500">Last updated: June 2025 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 2 · TRUST STATS
+══════════════════════════════════════ -->
+<section class="py-16 px-4 relative">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up">
+        <div class="text-3xl font-black grad-text mb-2">100%</div>
+        <div class="text-sm font-semibold text-white mb-1">Transparency</div>
+        <div class="text-xs text-slate-400">Clear, honest policies</div>
+      </div>
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up delay-100">
+        <div class="mb-2">
+          <svg class="mx-auto" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#sg1)" stroke-width="1.8">
+            <defs><linearGradient id="sg1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+          </svg>
+        </div>
+        <div class="text-sm font-semibold text-white mb-1">Secure Handling</div>
+        <div class="text-xs text-slate-400">Encrypted data storage</div>
+      </div>
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up delay-200">
+        <div class="mb-2">
+          <svg class="mx-auto" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#sg2)" stroke-width="1.8">
+            <defs><linearGradient id="sg2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="text-sm font-semibold text-white mb-1">Trusted Practices</div>
+        <div class="text-xs text-slate-400">Industry-standard compliance</div>
+      </div>
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up delay-300">
+        <div class="mb-2">
+          <svg class="mx-auto" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="url(#sg3)" stroke-width="1.8">
+            <defs><linearGradient id="sg3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <div class="text-sm font-semibold text-white mb-1">Privacy Focused</div>
+        <div class="text-xs text-slate-400">Your rights first, always</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 3 · QUICK OVERVIEW
+══════════════════════════════════════ -->
+<section id="overview" class="py-16 px-4 relative">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Quick Summary</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">Privacy <span class="grad-text">At A Glance</span></h2>
+      <p class="text-slate-400 mt-3 text-sm max-w-xl mx-auto">The key points, without the legal jargon. Full details below.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+      <!-- Card 1 -->
+      <div class="overview-card glass rounded-2xl p-6 fade-up">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M9 12h6M9 16h6M7 8h10M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">What We Collect</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Name, email, phone, and business details from contact forms. Analytics data from website visits, and conversation data through AI tools.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-100">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(108,60,247,0.12);border:1px solid rgba(108,60,247,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 115 19.07"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">How We Use Data</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">To respond to inquiries, deliver services, improve marketing campaigns, power AI automation, and provide better customer experiences.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-200">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">How We Protect It</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Secure hosting, HTTPS encryption, limited staff access, and vetted third-party providers. We never sell your data.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-300">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style="background:rgba(108,60,247,0.12);border:1px solid rgba(108,60,247,0.2)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="text-base font-bold text-white mb-2">Your Rights</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Access, correct, or request deletion of your data at any time. We'll respond promptly and fully respect your choices.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 4 · FULL POLICY CONTENT (with sticky TOC)
+══════════════════════════════════════ -->
+<section id="policy" class="py-16 px-4 relative">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Full Policy</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">The <span class="grad-text">Fine Print</span> Made Clear</h2>
+      <p class="text-slate-400 mt-3 text-sm max-w-xl mx-auto">Click any section to expand details. Designed to be read, not just scrolled past.</p>
+    </div>
+
+    <div class="flex gap-8 items-start">
+
+      <!-- Sticky TOC (desktop only) -->
+      <aside class="hidden xl:block w-56 flex-shrink-0">
+        <div id="toc-desktop" class="glass rounded-2xl p-5">
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-widest mb-4">Contents</p>
+          <nav class="flex flex-col">
+            <a href="#pol-intro"        class="toc-link">Introduction</a>
+            <a href="#pol-collect"      class="toc-link">What We Collect</a>
+            <a href="#pol-use"          class="toc-link">How We Use It</a>
+            <a href="#pol-cookies"      class="toc-link">Cookies & Analytics</a>
+            <a href="#pol-ads"          class="toc-link">Advertising Tools</a>
+            <a href="#pol-ai"           class="toc-link">AI Automation</a>
+            <a href="#pol-third"        class="toc-link">Third-Party Platforms</a>
+            <a href="#pol-security"     class="toc-link">Data Security</a>
+            <a href="#pol-retention"    class="toc-link">Data Retention</a>
+            <a href="#pol-rights"       class="toc-link">Your Rights</a>
+            <a href="#pol-children"     class="toc-link">Children's Privacy</a>
+            <a href="#pol-updates"      class="toc-link">Policy Updates</a>
+            <a href="#pol-contact"      class="toc-link">Contact Us</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Accordion content -->
+      <div class="flex-1 space-y-3">
+
+        <!-- Helper macro: each accordion item -->
+        <!-- 1. Introduction -->
+        <div id="pol-intro" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Introduction</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>ScaleStack Solutions ("we," "our," or "us") provides website development, paid advertising management, and AI automation services. This Privacy Policy explains how we collect, use, and protect information obtained through our services, websites, and communication tools.</p>
+              <p>By using our services or contacting us, you agree to the practices described in this policy. We encourage you to read it fully — we've made it as clear as possible.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. What We Collect -->
+        <div id="pol-collect" class="glass rounded-2xl overflow-hidden fade-up delay-100">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M9 12h6M9 16h6M7 8h10M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Information We Collect</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-4">
+              <div>
+                <p class="text-white font-medium mb-2">Information you provide directly:</p>
+                <ul class="space-y-1 list-disc list-inside text-slate-400">
+                  <li>Name, email address, phone number, and business name</li>
+                  <li>Project details, goals, and requirements</li>
+                  <li>Messages submitted via contact forms or chatbots</li>
+                  <li>Appointment booking details</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-white font-medium mb-2">Information collected automatically:</p>
+                <ul class="space-y-1 list-disc list-inside text-slate-400">
+                  <li>IP address and browser/device type</li>
+                  <li>Pages visited and time spent on site</li>
+                  <li>Referring website and search terms</li>
+                  <li>Cookie and analytics data</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-white font-medium mb-2">Through AI tools:</p>
+                <ul class="space-y-1 list-disc list-inside text-slate-400">
+                  <li>Chatbot conversations and responses</li>
+                  <li>Lead qualification data</li>
+                  <li>Customer support interactions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. How We Use Information -->
+        <div id="pol-use" class="glass rounded-2xl overflow-hidden fade-up delay-200">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">How We Use Information</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">
+              <p class="mb-3">We use the information we collect to:</p>
+              <ul class="space-y-2 list-disc list-inside">
+                <li>Respond to inquiries and deliver requested services</li>
+                <li>Manage advertising campaigns and track performance</li>
+                <li>Power AI chatbots, lead management, and automation workflows</li>
+                <li>Send service updates and relevant communications (you may opt out)</li>
+                <li>Improve our website, services, and customer experience</li>
+                <li>Meet legal obligations and prevent fraud</li>
+              </ul>
+              <p class="mt-3">We do not sell, rent, or trade your personal information to third parties for their own marketing purposes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Cookies -->
+        <div id="pol-cookies" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="1.5" fill="#8b5cf6"/><circle cx="15" cy="11" r="1" fill="#8b5cf6"/><circle cx="11" cy="15" r="1" fill="#8b5cf6"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Cookies & Analytics</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>We use cookies and similar tracking technologies to improve your experience and analyze website performance.</p>
+              <p><span class="text-white font-medium">Google Analytics:</span> Tracks visitor behaviour, traffic sources, and page performance to help us improve content and user experience.</p>
+              <p><span class="text-white font-medium">Google Tag Manager:</span> Manages our tracking scripts efficiently without slowing page load.</p>
+              <p><span class="text-white font-medium">Facebook Pixel:</span> Measures ad campaign effectiveness and enables retargeting to relevant audiences.</p>
+              <p>You can disable cookies through your browser settings. Most functionality will still be available, though some personalization features may be limited.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Advertising -->
+        <div id="pol-ads" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M3 3h18v4H3zM3 11h18v4H3zM3 19h18v4H3z" opacity=".3"/><rect x="3" y="3" width="18" height="4" rx="1"/><rect x="3" y="10" width="12" height="4" rx="1"/><rect x="3" y="17" width="8" height="4" rx="1"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Advertising & Marketing Tools</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>When managing paid advertising campaigns on behalf of clients, we access platforms including Google Ads, Facebook Ads Manager, and other ad networks. This involves:</p>
+              <ul class="space-y-1 list-disc list-inside">
+                <li>Conversion tracking to measure ad performance</li>
+                <li>Audience building for targeted ad delivery</li>
+                <li>Retargeting previous website visitors</li>
+                <li>A/B testing ad creatives and landing pages</li>
+              </ul>
+              <p>Data used for advertising purposes is governed by the respective platform privacy policies (Google, Meta, etc.) as well as this policy.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. AI Automation -->
+        <div id="pol-ai" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 12v4M10 14h4"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">AI Automation Services</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>Our AI automation services include chatbots, lead qualification systems, appointment booking, and customer support automation. These tools may collect and process:</p>
+              <ul class="space-y-1 list-disc list-inside">
+                <li>Conversation transcripts and user-submitted information</li>
+                <li>Appointment booking details including dates, times, and contact info</li>
+                <li>Customer support queries and responses</li>
+                <li>Lead qualification data including budget, needs, and timelines</li>
+              </ul>
+              <p>AI-processed data is used solely to improve service delivery and is not used to train third-party AI models without consent.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Third-Party Platforms -->
+        <div id="pol-third" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51L15.42 17.49M15.41 6.51L8.59 10.49"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Third-Party Platforms</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>We work with trusted third-party services to deliver our work. These include:</p>
+              <ul class="space-y-2 list-disc list-inside">
+                <li><span class="text-white">GoHighLevel</span> — CRM, automation, and appointment booking</li>
+                <li><span class="text-white">Google Ads & Analytics</span> — Campaign management and traffic analysis</li>
+                <li><span class="text-white">Meta Business Suite</span> — Facebook and Instagram advertising</li>
+                <li><span class="text-white">Stripe / payment processors</span> — Secure payment handling (we never store card details)</li>
+                <li><span class="text-white">Hosting providers</span> — Secure website and data hosting</li>
+              </ul>
+              <p>Each provider operates under their own privacy policy and security standards. We only share data necessary for service delivery.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Data Security -->
+        <div id="pol-security" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Data Security</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>We take data security seriously and implement reasonable industry-standard measures including:</p>
+              <ul class="space-y-1 list-disc list-inside">
+                <li>HTTPS/SSL encryption on all web properties</li>
+                <li>Secure, access-controlled hosting environments</li>
+                <li>Limited staff access to personal data (need-to-know basis)</li>
+                <li>Regular security reviews and updates</li>
+              </ul>
+              <p>While no system is completely secure, we work diligently to protect your data. In the event of a breach that affects your information, we will notify you as required by law.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Retention -->
+        <div id="pol-retention" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Data Retention</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>We retain personal information only as long as necessary to deliver our services and meet legal obligations:</p>
+              <ul class="space-y-1 list-disc list-inside">
+                <li>Contact inquiries — up to 2 years unless you request deletion</li>
+                <li>Active client records — for the duration of the service relationship</li>
+                <li>Analytics data — as per Google/platform retention settings (typically 14–26 months)</li>
+                <li>Financial records — as required by law (typically 7 years)</li>
+              </ul>
+              <p>You can request early deletion at any time by contacting us.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Your Rights -->
+        <div id="pol-rights" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Your Rights</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>Depending on your location, you may have the right to:</p>
+              <ul class="space-y-1 list-disc list-inside">
+                <li><span class="text-white">Access</span> — Request a copy of the data we hold about you</li>
+                <li><span class="text-white">Correct</span> — Ask us to fix inaccurate information</li>
+                <li><span class="text-white">Delete</span> — Request removal of your personal data</li>
+                <li><span class="text-white">Restrict</span> — Ask us to limit how we use your data</li>
+                <li><span class="text-white">Portability</span> — Request your data in a portable format</li>
+                <li><span class="text-white">Object</span> — Opt out of certain processing activities</li>
+              </ul>
+              <p>To exercise any of these rights, email us at <span class="text-cyan-400">privacy@scalestacksolutions.com</span>. We'll respond within 30 days.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Children -->
+        <div id="pol-children" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Children's Privacy</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">
+              <p>Our services are intended for business owners and professionals. We do not knowingly collect personal information from individuals under 18 years of age. If you believe a minor has submitted information through our services, please contact us immediately and we will delete it promptly.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Updates -->
+        <div id="pol-updates" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9A9 9 0 0120.5 15M20.49 15A9 9 0 013.5 9"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Policy Updates</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">
+              <p>We may update this policy as our services evolve or legal requirements change. When we do, we'll update the "Last Updated" date at the top of this page. For material changes, we'll notify active clients by email. Continued use of our services after updates constitutes acceptance of the revised policy.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13. Contact -->
+        <div id="pol-contact" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="accordion-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAccordion(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Contact Information</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-2">
+              <p>For any privacy-related questions or requests, please contact us:</p>
+              <p><span class="text-white font-medium">Email:</span> <a href="mailto:privacy@scalestacksolutions.com" class="text-cyan-400 hover:underline">privacy@scalestacksolutions.com</a></p>
+              <p><span class="text-white font-medium">Website:</span> <a href="contact.html" class="text-cyan-400 hover:underline">scalestacksolutions.com/contact</a></p>
+              <p class="mt-3">We aim to respond to all privacy inquiries within 5 business days.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end accordion -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 5 · DATA SECURITY FEATURES
+══════════════════════════════════════ -->
+<section class="py-16 px-4 relative">
+  <div class="orb w-72 h-72 -left-20 top-0" style="background:rgba(108,60,247,0.2)"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Security</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">How We <span class="grad-text">Protect</span> Your Information</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+
+      <div class="service-card glass rounded-2xl p-6 flex gap-4 fade-up">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,rgba(108,60,247,0.25),rgba(34,211,238,0.1))">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#si1)" stroke-width="1.8">
+            <defs><linearGradient id="si1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <rect x="2" y="2" width="20" height="20" rx="4"/><path d="M12 8v4M12 16h.01"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-1">Secure Hosting</h3>
+          <p class="text-slate-400 text-sm">All websites and data stored on enterprise-grade, access-controlled servers with regular security updates.</p>
+        </div>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 flex gap-4 fade-up delay-100">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,rgba(108,60,247,0.25),rgba(34,211,238,0.1))">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#si2)" stroke-width="1.8">
+            <defs><linearGradient id="si2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/><circle cx="12" cy="16" r="1" fill="url(#si2)"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-1">Encrypted Connections</h3>
+          <p class="text-slate-400 text-sm">SSL/TLS encryption on all web properties ensures data in transit is always protected from interception.</p>
+        </div>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 flex gap-4 fade-up delay-200">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,rgba(108,60,247,0.25),rgba(34,211,238,0.1))">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#si3)" stroke-width="1.8">
+            <defs><linearGradient id="si3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-1">Limited Access Controls</h3>
+          <p class="text-slate-400 text-sm">Personal data is only accessible to team members who need it to deliver your services. Strictly need-to-know.</p>
+        </div>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 flex gap-4 fade-up delay-300">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:linear-gradient(135deg,rgba(108,60,247,0.25),rgba(34,211,238,0.1))">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#si4)" stroke-width="1.8">
+            <defs><linearGradient id="si4" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="font-bold text-white mb-1">Trusted Service Providers</h3>
+          <p class="text-slate-400 text-sm">We only partner with vetted providers who meet high security standards and sign data processing agreements.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 6 · YOUR RIGHTS
+══════════════════════════════════════ -->
+<section id="your-rights" class="py-16 px-4 relative">
+  <div class="orb w-80 h-80 -right-20 top-10" style="background:rgba(34,211,238,0.12)"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Your Control</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">You're <span class="grad-text">In Control</span></h2>
+      <p class="text-slate-400 mt-3 text-sm max-w-xl mx-auto">Your rights over your data, clearly explained.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="overview-card glass rounded-2xl p-5 text-center fade-up">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(34,211,238,0.12)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-1">Access Data</h3>
+        <p class="text-xs text-slate-400">Request a copy of everything we hold on you</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-5 text-center fade-up delay-100">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(108,60,247,0.12)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-1">Correct Info</h3>
+        <p class="text-xs text-slate-400">Fix any inaccurate data we have about you</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-5 text-center fade-up delay-200">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(34,211,238,0.12)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-1">Request Deletion</h3>
+        <p class="text-xs text-slate-400">Ask us to permanently erase your records</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-5 text-center fade-up delay-300">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(108,60,247,0.12)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-1">Contact Support</h3>
+        <p class="text-xs text-slate-400">Reach our team for any privacy question</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 7 · SERVICES & DATA USE
+══════════════════════════════════════ -->
+<section class="py-16 px-4 relative">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Our Services</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">How Data <span class="grad-text">Supports</span> Our Services</h2>
+      <p class="text-slate-400 mt-3 text-sm">Each service has a specific, transparent use of data.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+      <!-- Web Dev -->
+      <div class="service-card glass rounded-2xl p-6 fade-up group">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all group-hover:scale-110" style="background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(108,60,247,0.1))">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3" style="background:rgba(34,211,238,0.1);color:#22d3ee">Website Development</div>
+        <h3 class="font-bold text-white mb-2">Web Presence Data</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Website analytics track visitor behaviour to help improve your site. Contact form submissions and customer inquiries are collected to connect you with leads.</p>
+        <ul class="mt-3 space-y-1">
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0"></span>Visitor analytics</li>
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0"></span>Contact form data</li>
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0"></span>Performance metrics</li>
+        </ul>
+      </div>
+
+      <!-- Ads -->
+      <div class="service-card glass rounded-2xl p-6 fade-up delay-100 group">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all group-hover:scale-110" style="background:linear-gradient(135deg,rgba(108,60,247,0.2),rgba(34,211,238,0.1))">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3" style="background:rgba(108,60,247,0.1);color:#8b5cf6">Paid Advertising</div>
+        <h3 class="font-bold text-white mb-2">Campaign Optimization</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Advertising data helps us optimize campaigns, measure ROI, and reach the right audiences. Conversion tracking shows which ads drive real results.</p>
+        <ul class="mt-3 space-y-1">
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-purple-400 flex-shrink-0"></span>Conversion tracking</li>
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-purple-400 flex-shrink-0"></span>Audience targeting</li>
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-purple-400 flex-shrink-0"></span>Campaign performance</li>
+        </ul>
+      </div>
+
+      <!-- AI -->
+      <div class="service-card glass rounded-2xl p-6 fade-up delay-200 group">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all group-hover:scale-110" style="background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(108,60,247,0.1))">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2zM12 16a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2v-2a2 2 0 012-2zM2 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2H4a2 2 0 01-2-2zM16 12a2 2 0 012-2h2a2 2 0 012 2 2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3" style="background:rgba(34,211,238,0.1);color:#22d3ee">AI Automation</div>
+        <h3 class="font-bold text-white mb-2">Intelligent Workflows</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Chatbot conversations, lead management, appointment bookings, and customer support interactions are processed to deliver automated, personalized experiences.</p>
+        <ul class="mt-3 space-y-1">
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0"></span>Chatbot interactions</li>
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0"></span>Lead qualification</li>
+          <li class="text-xs text-slate-500 flex items-center gap-1.5"><span class="w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0"></span>Appointment booking</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 8 · FAQ
+══════════════════════════════════════ -->
+<section class="py-16 px-4 relative">
+  <div class="orb w-72 h-72 left-1/2 -translate-x-1/2 top-0" style="background:rgba(108,60,247,0.15)"></div>
+  <div class="max-w-3xl mx-auto relative z-10">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">FAQ</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">Privacy <span class="grad-text">Questions?</span></h2>
+    </div>
+
+    <div class="space-y-3">
+
+      <!-- FAQ items -->
+      <div class="glass rounded-2xl overflow-hidden fade-up">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">What information do you collect?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm">We collect contact details you submit (name, email, phone), website analytics, and data from AI tools like chatbots. We only collect what's necessary to deliver and improve our services.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-100">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">How is my information used?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm">To respond to your inquiries, deliver services, manage advertising campaigns, and power AI automation. We may also send relevant service updates — you can opt out at any time.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-200">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">Do you share my data?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm">We never sell your data. We share it only with trusted service providers (like Google, Meta, and GoHighLevel) who help us deliver your services, and only to the extent necessary.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-300">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">Can I request deletion of my data?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm">Yes, absolutely. Email us at privacy@scalestacksolutions.com with your request and we'll delete your personal data within 30 days, subject to any legal retention requirements.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-400">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">How secure is my information?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm">We use SSL encryption, secure hosting, strict access controls, and trusted third-party providers. We follow industry best practices and continuously review our security measures.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-500">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">How do I contact you about privacy?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm">Email us at <a href="mailto:privacy@scalestacksolutions.com" class="text-cyan-400 hover:underline">privacy@scalestacksolutions.com</a> or use the contact form on our website. We respond to all privacy inquiries within 5 business days.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 9 · FINAL TRUST CTA
+══════════════════════════════════════ -->
+<section class="py-20 px-4 relative overflow-hidden">
+  <div class="orb w-80 h-80 left-0 top-1/2 -translate-y-1/2" style="background:rgba(108,60,247,0.3)"></div>
+  <div class="orb w-64 h-64 right-0 top-1/2 -translate-y-1/2" style="background:rgba(34,211,238,0.2);animation-delay:3s"></div>
+
+  <!-- Animated shapes -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute w-2 h-2 rounded-full top-1/4 left-1/4 animate-ping" style="background:rgba(108,60,247,0.4);animation-duration:3s"></div>
+    <div class="absolute w-1.5 h-1.5 rounded-full bottom-1/4 right-1/3 animate-ping" style="background:rgba(34,211,238,0.4);animation-duration:2.5s;animation-delay:1s"></div>
+    <div class="absolute w-1 h-1 rounded-full top-1/3 right-1/4 animate-ping" style="background:rgba(139,92,246,0.5);animation-duration:4s;animation-delay:2s"></div>
+  </div>
+
+  <div class="max-w-3xl mx-auto text-center relative z-10">
+    <div class="glass rounded-3xl p-10 sm:p-14 fade-up" style="border-color:rgba(108,60,247,0.25)">
+      <!-- Shield icon -->
+      <div class="flex justify-center mb-6">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,rgba(108,60,247,0.3),rgba(34,211,238,0.15));border:1px solid rgba(108,60,247,0.3)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#ctaShield)" stroke-width="1.8">
+            <defs><linearGradient id="ctaShield" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Questions About <span class="grad-text">Your Privacy?</span></h2>
+      <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mb-8">We're committed to protecting your information and maintaining complete transparency. Our team is here to help with any privacy questions or concerns.</p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="contact.html" class="btn-primary text-white font-semibold px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">Contact Us</a>
+        <a href="index.html#contact" class="btn-outline text-white font-medium px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">Book Free Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     SECTION 10 · FOOTER
+══════════════════════════════════════ -->
+<footer class="relative pt-16 pb-8 px-4 border-t" style="border-color:rgba(255,255,255,0.06)">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#6c3cf7,#22d3ee)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="white"><path d="M8 1L14 4.5V11.5L8 15L2 11.5V4.5L8 1Z"/></svg>
+          </div>
+          <span class="text-lg font-bold"><span class="text-white">Scale</span><span class="grad-text">Stack</span></span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">AI-powered growth agency helping businesses scale with websites, ads, and automation.</p>
+        <!-- Social -->
+        <div class="flex gap-3">
+          <a href="#" aria-label="Facebook" class="w-8 h-8 glass rounded-lg flex items-center justify-center hover:border-purple-500 transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-slate-400"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-8 h-8 glass rounded-lg flex items-center justify-center hover:border-purple-500 transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-8 h-8 glass rounded-lg flex items-center justify-center hover:border-purple-500 transition-colors">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" class="text-slate-400"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Services</p>
+        <ul class="space-y-2.5">
+          <li><a href="index.html#services" class="text-slate-400 text-sm hover:text-white transition-colors">Website Development</a></li>
+          <li><a href="index.html#services" class="text-slate-400 text-sm hover:text-white transition-colors">Paid Advertising</a></li>
+          <li><a href="index.html#services" class="text-slate-400 text-sm hover:text-white transition-colors">AI Automation</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Quick Links</p>
+        <ul class="space-y-2.5">
+          <li><a href="index.html" class="text-slate-400 text-sm hover:text-white transition-colors">Home</a></li>
+          <li><a href="services.html" class="text-slate-400 text-sm hover:text-white transition-colors">Services</a></li>
+          <li><a href="index.html#pricing" class="text-slate-400 text-sm hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="process.html" class="text-slate-400 text-sm hover:text-white transition-colors">Process</a></li>
+          <li><a href="contact.html" class="text-slate-400 text-sm hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Legal</p>
+        <ul class="space-y-2.5">
+          <li><a href="privacypolicy.html" class="text-cyan-400 text-sm font-medium">Privacy Policy</a></li>
+          <li><a href="terms.html" class="text-slate-400 text-sm hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+        <div class="mt-6">
+          <a href="index.html#contact" class="btn-primary text-white text-xs font-semibold px-4 py-2 rounded-lg inline-block">Book Free Call →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.06)">
+      <p class="text-slate-500 text-xs">© 2025 ScaleStack Solutions. All rights reserved.</p>
+      <p class="text-slate-500 text-xs">Built to scale your business faster.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════ -->
+<script>
+// ── Navbar scroll effect ──────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── Mobile menu ──────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const h1 = document.getElementById('h1');
+const h2 = document.getElementById('h2');
+const h3 = document.getElementById('h3');
+let menuOpen = false;
+
+hamburger.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobileMenu.classList.toggle('open', menuOpen);
+  // Animate hamburger to X
+  if (menuOpen) {
+    h1.style.transform = 'rotate(45deg) translateY(7px)';
+    h2.style.opacity = '0';
+    h3.style.transform = 'rotate(-45deg) translateY(-7px)';
+  } else {
+    h1.style.transform = '';
+    h2.style.opacity = '1';
+    h3.style.transform = '';
+  }
+});
+
+// ── Policy accordion ─────────────────────────
+function toggleAccordion(btn) {
+  const content = btn.nextElementSibling;
+  const icon = btn.querySelector('.accordion-icon');
+  const isOpen = content.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.accordion-btn').forEach(b => {
+    b.nextElementSibling.classList.remove('open');
+    b.querySelector('.accordion-icon').classList.remove('open');
+  });
+
+  // Open clicked if it was closed
+  if (!isOpen) {
+    content.classList.add('open');
+    icon.classList.add('open');
+  }
+}
+
+// ── FAQ accordion ─────────────────────────────
+function toggleFaq(btn) {
+  const content = btn.nextElementSibling;
+  const icon = btn.querySelector('.accordion-icon');
+  const isOpen = content.classList.contains('open');
+
+  document.querySelectorAll('.faq-btn').forEach(b => {
+    b.nextElementSibling.classList.remove('open');
+    b.querySelector('.accordion-icon').classList.remove('open');
+  });
+
+  if (!isOpen) {
+    content.classList.add('open');
+    icon.classList.add('open');
+  }
+}
+
+// ── Scroll reveal ─────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ── Sticky TOC active link ────────────────────
+const sections = document.querySelectorAll('[id^="pol-"]');
+const tocLinks = document.querySelectorAll('.toc-link');
+
+const tocObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      tocLinks.forEach(link => link.classList.remove('active'));
+      const active = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(s => tocObserver.observe(s));
+
+// ── Smooth scroll for anchor links ───────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>

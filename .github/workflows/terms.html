@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service | ScaleStack Solutions</title>
+<meta name="description" content="ScaleStack Solutions Terms of Service — clear expectations, transparent policies, and a commitment to professional service.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:         #0a0e27;
+    --navy-mid:     #0d1233;
+    --navy-light:   #141942;
+    --purple:       #6c3cf7;
+    --purple-light: #8b5cf6;
+    --cyan:         #22d3ee;
+    --cyan-light:   #67e8f9;
+    --white:        #ffffff;
+    --gray-soft:    #94a3b8;
+    --card-bg:      rgba(255,255,255,0.04);
+    --card-border:  rgba(255,255,255,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--navy); }
+  ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
+
+  /* BG grid */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(108,60,247,0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(108,60,247,0.08) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Glass */
+  .glass {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Gradient text */
+  .grad-text {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Orbs */
+  .orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    pointer-events: none;
+    animation: pulse-orb 6s ease-in-out infinite;
+  }
+  @keyframes pulse-orb {
+    0%,100% { opacity: 0.4; transform: scale(1); }
+    50%      { opacity: 0.7; transform: scale(1.1); }
+  }
+
+  /* Float */
+  @keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50%      { transform: translateY(-12px); }
+  }
+  .float      { animation: float 4s ease-in-out infinite; }
+  .float-slow { animation: float 6s ease-in-out infinite; }
+
+  /* Fade up */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* Accordion */
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+  }
+  .accordion-content.open { max-height: 1200px; }
+  .accordion-icon { transition: transform 0.3s ease; }
+  .accordion-icon.open { transform: rotate(180deg); }
+
+  /* FAQ */
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .faq-content.open { max-height: 400px; }
+
+  /* Cards */
+  .stat-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(108,60,247,0.25);
+    border-color: rgba(108,60,247,0.4);
+  }
+  .overview-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .overview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 64px rgba(34,211,238,0.12);
+    border-color: rgba(34,211,238,0.3);
+  }
+  .service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(108,60,247,0.2);
+    border-color: rgba(108,60,247,0.35);
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple) 0%, #4f46e5 100%);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(108,60,247,0.45);
+    opacity: 0.92;
+  }
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  }
+  .btn-outline:hover {
+    border-color: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-2px);
+  }
+
+  /* Sticky TOC */
+  #toc-desktop {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+  #toc-desktop::-webkit-scrollbar { width: 3px; }
+  #toc-desktop::-webkit-scrollbar-thumb { background: rgba(108,60,247,0.4); }
+  .toc-link {
+    color: var(--gray-soft);
+    font-size: 0.78rem;
+    transition: color 0.2s ease;
+    display: block;
+    padding: 5px 0 5px 12px;
+    border-left: 2px solid transparent;
+    text-decoration: none;
+  }
+  .toc-link:hover, .toc-link.active {
+    color: var(--cyan);
+    border-left-color: var(--cyan);
+  }
+
+  /* Navbar */
+  #navbar { transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; }
+  #navbar.scrolled {
+    background: rgba(9,12,35,0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  }
+
+  /* Mobile menu */
+  #mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1); }
+  #mobile-menu.open { max-height: 500px; }
+
+  /* Stagger */
+  .delay-100 { transition-delay: 0.1s; }
+  .delay-200 { transition-delay: 0.2s; }
+  .delay-300 { transition-delay: 0.3s; }
+  .delay-400 { transition-delay: 0.4s; }
+  .delay-500 { transition-delay: 0.5s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body class="bg-grid">
+
+<!-- ════════════════════════════════
+     NAVBAR
+════════════════════════════════ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+      <span class="text-xl font-extrabold tracking-tight">
+        <span class="text-white">Scale</span><span style="background:linear-gradient(90deg,#22d3ee,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Stack</span>
+      </span>
+    </a>
+
+    <!-- Desktop links — centred -->
+    <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+      <a href="services.html" class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Services</a>
+      <a href="index.html#pricing"  class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Pricing</a>
+      <a href="process.html"  class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Process</a>
+      <a href="contact.html"  class="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Contact</a>
+    </div>
+
+    <!-- Desktop CTA -->
+    <a href="index.html#contact" class="hidden md:inline-flex items-center gap-1 btn-primary text-white text-sm font-bold px-5 py-2.5 rounded-xl">
+      Book Free Call →
+    </a>
+
+    <!-- Hamburger -->
+    <button id="hamburger" class="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1" aria-label="Toggle menu">
+      <span class="w-full h-[2px] bg-white rounded block transition-all duration-300" id="h1"></span>
+      <span class="w-full h-[2px] bg-white rounded block transition-all duration-300" id="h2"></span>
+      <span class="w-full h-[2px] bg-white rounded block transition-all duration-300" id="h3"></span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu">
+    <div class="mx-0 mt-3 glass rounded-2xl px-5 py-4 flex flex-col gap-1">
+      <a href="index.html"          class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Home</a>
+      <a href="services.html" class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Services</a>
+      <a href="index.html#pricing"  class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Pricing</a>
+      <a href="process.html"  class="text-sm font-medium text-slate-300 hover:text-white py-3 border-b border-white/5 transition-colors">Process</a>
+      <a href="contact.html"  class="text-sm font-medium text-slate-300 hover:text-white py-3 transition-colors">Contact</a>
+      <a href="index.html#contact"  class="btn-primary text-white text-sm font-bold px-5 py-3 rounded-xl text-center mt-3">Book Free Call →</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ════════════════════════════════
+     SECTION 1 · HERO
+════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+  <!-- Orbs -->
+  <div class="orb w-96 h-96 top-0 -left-32"             style="background:rgba(108,60,247,0.32)"></div>
+  <div class="orb w-80 h-80 bottom-10 -right-24"         style="background:rgba(34,211,238,0.18);animation-delay:2s"></div>
+  <div class="orb w-64 h-64 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style="background:rgba(79,70,229,0.14);animation-delay:4s"></div>
+
+  <!-- Floating trust badges -->
+  <div class="absolute top-36 right-4 sm:right-16 glass rounded-2xl p-3 float z-10" style="animation-delay:0.5s">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(34,211,238,0.18)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      </div>
+      <div><p class="text-xs font-semibold text-white">Verified Agency</p><p class="text-xs text-slate-400">Professional Standards</p></div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-36 left-4 sm:left-16 glass rounded-2xl p-3 float-slow z-10" style="animation-delay:1.5s">
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(108,60,247,0.2)">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div><p class="text-xs font-semibold text-white">Client Protected</p><p class="text-xs text-slate-400">Fair policies always</p></div>
+    </div>
+  </div>
+
+  <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    <!-- Eyebrow -->
+    <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6 fade-up">
+      <div class="w-2 h-2 rounded-full animate-pulse" style="background:var(--cyan)"></div>
+      <span class="text-sm font-medium" style="color:var(--cyan)">Legal &amp; Policies</span>
+    </div>
+
+    <!-- Document SVG illustration -->
+    <div class="flex justify-center mb-8 fade-up delay-100">
+      <svg width="100" height="110" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg" class="float">
+        <defs>
+          <linearGradient id="docGrad" x1="0" y1="0" x2="100" y2="110" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#6c3cf7"/>
+          </linearGradient>
+          <filter id="docGlow"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Document body -->
+        <rect x="18" y="8" width="64" height="82" rx="6" fill="url(#docGrad)" fill-opacity="0.12" stroke="url(#docGrad)" stroke-width="1.5" filter="url(#docGlow)"/>
+        <!-- Folded corner -->
+        <path d="M64 8L82 26H64V8Z" fill="url(#docGrad)" fill-opacity="0.25" stroke="url(#docGrad)" stroke-width="1"/>
+        <!-- Lines of text -->
+        <rect x="28" y="36" width="30" height="2.5" rx="1.2" fill="url(#docGrad)" fill-opacity="0.7"/>
+        <rect x="28" y="44" width="44" height="2" rx="1" fill="url(#docGrad)" fill-opacity="0.4"/>
+        <rect x="28" y="50" width="38" height="2" rx="1" fill="url(#docGrad)" fill-opacity="0.4"/>
+        <rect x="28" y="56" width="42" height="2" rx="1" fill="url(#docGrad)" fill-opacity="0.4"/>
+        <rect x="28" y="66" width="44" height="2" rx="1" fill="url(#docGrad)" fill-opacity="0.3"/>
+        <rect x="28" y="72" width="34" height="2" rx="1" fill="url(#docGrad)" fill-opacity="0.3"/>
+        <!-- Checkmark badge -->
+        <circle cx="72" cy="82" r="14" fill="url(#docGrad)" fill-opacity="0.18" stroke="url(#docGrad)" stroke-width="1.5"/>
+        <path d="M66 82l4 4 8-8" stroke="url(#docGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#docGlow)"/>
+      </svg>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6 fade-up delay-200">
+      Terms of <span class="grad-text">Service</span>
+    </h1>
+
+    <!-- Sub -->
+    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 fade-up delay-300">
+      Clear expectations, transparent policies, and a commitment to professional service. We believe great partnerships start with honesty.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-up delay-400">
+      <a href="contact.html"  class="btn-primary text-white font-semibold px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">Contact Us</a>
+      <a href="privacypolicy.html"  class="btn-outline text-white font-medium px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">View Privacy Policy</a>
+    </div>
+
+    <p class="text-slate-500 text-xs mt-8 fade-up delay-500">Last updated: June 2025 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SECTION 2 · TRUST BANNER
+════════════════════════════════ -->
+<section class="py-14 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(34,211,238,0.12)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        </div>
+        <div class="text-sm font-bold text-white mb-1">Professional Service</div>
+        <div class="text-xs text-slate-400">Delivered with excellence</div>
+      </div>
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up delay-100">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(108,60,247,0.12)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M9 12h6M9 16h6M7 8h10M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg>
+        </div>
+        <div class="text-sm font-bold text-white mb-1">Transparent Policies</div>
+        <div class="text-xs text-slate-400">No hidden surprises</div>
+      </div>
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up delay-200">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(34,211,238,0.12)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="text-sm font-bold text-white mb-1">Client Protection</div>
+        <div class="text-xs text-slate-400">Your interests first</div>
+      </div>
+
+      <div class="stat-card glass rounded-2xl p-6 text-center fade-up delay-300">
+        <div class="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-3" style="background:rgba(108,60,247,0.12)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="text-sm font-bold text-white mb-1">Clear Expectations</div>
+        <div class="text-xs text-slate-400">Defined from day one</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SECTION 3 · QUICK SUMMARY
+════════════════════════════════ -->
+<section class="py-14 px-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Quick Summary</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">Terms <span class="grad-text">At A Glance</span></h2>
+      <p class="text-slate-400 mt-3 text-sm max-w-xl mx-auto">The key points in plain English. Full details in the sections below.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="overview-card glass rounded-2xl p-6 fade-up">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-2">Services Provided</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">We build websites, manage paid ads, and deliver AI automation systems. Each project scope is agreed upfront.</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-100">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(108,60,247,0.12);border:1px solid rgba(108,60,247,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-2">Payments</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Clear invoicing schedules. Late payments may pause services. Ad spend is separate unless explicitly included.</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-200">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-2">Client Responsibilities</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Provide accurate info, required access, and timely feedback. Delayed approvals may affect project timelines.</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-300">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(108,60,247,0.12);border:1px solid rgba(108,60,247,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-2">Ownership</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">You own your assets after full payment. We retain the right to display work in our portfolio unless agreed otherwise.</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-400">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-2">Liability</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">We do not guarantee specific revenue outcomes or platform performance. Our liability is capped at fees paid.</p>
+      </div>
+
+      <div class="overview-card glass rounded-2xl p-6 fade-up delay-500">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style="background:rgba(108,60,247,0.12);border:1px solid rgba(108,60,247,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-2">Termination</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Either party may terminate with notice. Outstanding balances remain due. Assets are transferred upon final payment.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SECTION 5 · TERMS CONTENT + STICKY TOC
+════════════════════════════════ -->
+<section id="terms-content" class="py-14 px-4">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Full Terms</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">The <span class="grad-text">Full Agreement</span></h2>
+      <p class="text-slate-400 mt-3 text-sm">Each section is expandable. Click to read the details.</p>
+    </div>
+
+    <div class="flex gap-8 items-start">
+
+      <!-- Sticky TOC desktop -->
+      <aside class="hidden xl:block w-52 flex-shrink-0">
+        <div id="toc-desktop" class="glass rounded-2xl p-5">
+          <p class="text-xs font-semibold text-slate-300 uppercase tracking-widest mb-4">Contents</p>
+          <nav class="flex flex-col">
+            <a href="#t-intro"     class="toc-link">Introduction</a>
+            <a href="#t-services"  class="toc-link">Services</a>
+            <a href="#t-client"    class="toc-link">Client Responsibilities</a>
+            <a href="#t-payments"  class="toc-link">Payments</a>
+            <a href="#t-web"       class="toc-link">Website Development</a>
+            <a href="#t-ads"       class="toc-link">Paid Advertising</a>
+            <a href="#t-ai"        class="toc-link">AI Automation</a>
+            <a href="#t-ip"        class="toc-link">Intellectual Property</a>
+            <a href="#t-liability" class="toc-link">Limitation of Liability</a>
+            <a href="#t-term"      class="toc-link">Termination</a>
+            <a href="#t-changes"   class="toc-link">Changes To Terms</a>
+            <a href="#t-contact"   class="toc-link">Contact</a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Accordion sections -->
+      <div class="flex-1 space-y-3">
+
+        <!-- 1. Introduction -->
+        <div id="t-intro" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Introduction</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>Welcome to ScaleStack Solutions. By engaging our services, accessing our website, or signing a service agreement, you agree to these Terms of Service.</p>
+              <p>These terms govern the relationship between ScaleStack Solutions ("we," "our," "us") and clients ("you," "your"). Please read them carefully. If you have any questions, contact us before proceeding.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Services -->
+        <div id="t-services" class="glass rounded-2xl overflow-hidden fade-up delay-100">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Services Provided</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-4">
+              <p>ScaleStack Solutions provides the following core services:</p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="glass rounded-xl p-3"><p class="text-white text-xs font-semibold mb-1">Website Development</p><p class="text-slate-400 text-xs">Custom websites, landing pages, and web applications built to your brief.</p></div>
+                <div class="glass rounded-xl p-3"><p class="text-white text-xs font-semibold mb-1">Paid Advertising</p><p class="text-slate-400 text-xs">Campaign strategy, setup, and management across Google, Meta, and other platforms.</p></div>
+                <div class="glass rounded-xl p-3"><p class="text-white text-xs font-semibold mb-1">AI Automation Solutions</p><p class="text-slate-400 text-xs">Chatbots, lead management systems, appointment booking, and workflow automation.</p></div>
+                <div class="glass rounded-xl p-3"><p class="text-white text-xs font-semibold mb-1">Growth Consulting</p><p class="text-slate-400 text-xs">Strategy, analytics, and guidance to accelerate your business growth.</p></div>
+              </div>
+              <p>Specific deliverables, timelines, and inclusions are defined in individual project agreements or proposals.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Client Responsibilities -->
+        <div id="t-client" class="glass rounded-2xl overflow-hidden fade-up delay-200">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Client Responsibilities</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>To ensure successful delivery, clients agree to:</p>
+              <ul class="space-y-2 list-disc list-inside">
+                <li><span class="text-white font-medium">Provide accurate information</span> — Business details, brand assets, goals, and any relevant background needed for your project.</li>
+                <li><span class="text-white font-medium">Provide required access</span> — Platform logins, hosting credentials, ad account access, or any tools necessary for service delivery.</li>
+                <li><span class="text-white font-medium">Review deliverables promptly</span> — Timely feedback ensures projects stay on schedule. Delays from the client side may push deadlines.</li>
+                <li><span class="text-white font-medium">Pay invoices on time</span> — As outlined in your agreement. Late payments may result in paused services.</li>
+                <li><span class="text-white font-medium">Provide legal content</span> — Clients are responsible for ensuring all content they supply is lawful and does not infringe third-party rights.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Payments -->
+        <div id="t-payments" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Payments</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p><span class="text-white font-medium">Payment schedules</span> are outlined in individual project agreements. Common structures include deposits, milestone payments, and monthly retainers.</p>
+              <p><span class="text-white font-medium">Subscription services</span> are billed monthly or as otherwise agreed. Cancellation must be provided with the agreed notice period to avoid further billing.</p>
+              <p><span class="text-white font-medium">Late payments</span> may result in suspended work until the outstanding balance is cleared. We reserve the right to apply a late fee of up to 5% per month on overdue amounts.</p>
+              <p><span class="text-white font-medium">Advertising spend</span> (e.g. Google Ads budget, Meta Ads budget) is not included in our management fees unless explicitly stated in your agreement. Ad spend is billed directly by the platform or invoiced separately.</p>
+              <p><span class="text-white font-medium">Refund policy:</span> Completed work and delivered milestones are non-refundable. Disputes must be raised within 14 days of invoice.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Website Development -->
+        <div id="t-web" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Website Development</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p><span class="text-white font-medium">Project scope</span> is defined in the project proposal or brief. Work outside agreed scope may incur additional charges.</p>
+              <p><span class="text-white font-medium">Revision rounds</span> are limited to those agreed in your package. Additional revisions are billed at our hourly rate.</p>
+              <p><span class="text-white font-medium">Launch</span> requires client sign-off. Final approval from the client constitutes acceptance of the delivered product.</p>
+              <p><span class="text-white font-medium">Ownership</span> of the completed website transfers to the client upon receipt of full payment. Until then, all work remains the property of ScaleStack Solutions.</p>
+              <p><span class="text-white font-medium">Hosting and domain</span> are the client's responsibility unless included in a specific agreement. We may assist with setup but are not liable for third-party hosting issues.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Paid Advertising -->
+        <div id="t-ads" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Paid Advertising</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p><span class="text-white font-medium">Campaign management</span> includes strategy, setup, optimisation, and reporting. We act as your advertising partner, not the platform.</p>
+              <p><span class="text-white font-medium">Platform dependency:</span> Our services rely on third-party platforms (Google, Meta, etc.). We are not responsible for platform policy changes, account suspensions, or algorithm updates outside our control.</p>
+              <p><span class="text-white font-medium">No guaranteed results:</span> Advertising performance is influenced by budget, market conditions, offer quality, and many other factors. We do not guarantee specific click volumes, leads, or revenue outcomes.</p>
+              <p><span class="text-white font-medium">Performance variables</span> such as seasonality, competition, and market conditions can impact results. We will always communicate performance honestly and work proactively to improve.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. AI Automation -->
+        <div id="t-ai" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">AI Automation</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p><span class="text-white font-medium">Chatbot and automation systems</span> are built to your specifications. Configurations and flows are tested before deployment.</p>
+              <p><span class="text-white font-medium">AI limitations:</span> AI systems can make errors, misunderstand inputs, or behave unexpectedly in edge cases. We recommend client oversight of AI interactions, particularly in sensitive contexts.</p>
+              <p><span class="text-white font-medium">Monitoring:</span> We strongly recommend ongoing monitoring of AI systems. Clients are responsible for reviewing AI-generated outputs in customer-facing environments.</p>
+              <p><span class="text-white font-medium">Third-party AI platforms</span> (such as OpenAI, GoHighLevel, etc.) operate under their own terms. We are not liable for outages or changes to these platforms.</p>
+              <p><span class="text-white font-medium">Ownership</span> of custom-built automation workflows transfers to the client after full payment.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. IP -->
+        <div id="t-ip" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Intellectual Property</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p><span class="text-white font-medium">Ownership rights:</span> All custom work (websites, copy, automation flows, ad creatives) becomes the property of the client upon receipt of full payment.</p>
+              <p><span class="text-white font-medium">Pre-payment:</span> Until full payment is received, all deliverables remain the intellectual property of ScaleStack Solutions.</p>
+              <p><span class="text-white font-medium">Agency portfolio rights:</span> We reserve the right to display completed work in our portfolio and marketing materials unless the client requests confidentiality in writing.</p>
+              <p><span class="text-white font-medium">Client-supplied assets:</span> Clients warrant that all content, images, logos, and materials they supply to us are legally owned or licensed for the intended use.</p>
+              <p><span class="text-white font-medium">Third-party tools:</span> Some deliverables may include licensed components (themes, plugins, fonts). These remain subject to their original licences.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Liability -->
+        <div id="t-liability" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Limitation of Liability</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p><span class="text-white font-medium">No revenue guarantees:</span> We do not guarantee specific sales, leads, conversions, or revenue outcomes from any of our services.</p>
+              <p><span class="text-white font-medium">No platform guarantees:</span> We are not liable for account suspensions, algorithm changes, policy updates, or platform outages by Google, Meta, or any third-party platform.</p>
+              <p><span class="text-white font-medium">Third-party services:</span> We are not responsible for failures, outages, or changes in third-party tools, software, or APIs that we integrate or use on your behalf.</p>
+              <p><span class="text-white font-medium">Maximum liability:</span> In all circumstances, ScaleStack Solutions' total liability to any client is limited to the total fees paid by that client in the 3 months preceding the claim.</p>
+              <p><span class="text-white font-medium">Indirect damages:</span> We are not liable for loss of profits, loss of data, or any indirect, consequential, or incidental damages arising from our services.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Termination -->
+        <div id="t-term" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Termination</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p><span class="text-white font-medium">Termination procedures:</span> Either party may terminate ongoing services with the agreed notice period (typically 30 days for retainer services) provided in writing.</p>
+              <p><span class="text-white font-medium">Outstanding balances:</span> Any fees owed for work completed up to the termination date remain payable in full, regardless of who initiates termination.</p>
+              <p><span class="text-white font-medium">Data and access:</span> Upon termination, we will return client-supplied assets and revoke our access to client accounts within a reasonable timeframe.</p>
+              <p><span class="text-white font-medium">Asset transfers:</span> Completed and fully paid deliverables will be transferred to the client. Work-in-progress may be transferred upon payment for work completed to date.</p>
+              <p><span class="text-white font-medium">Immediate termination</span> may be enacted by either party in cases of serious breach, fraudulent activity, or abusive conduct.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Changes -->
+        <div id="t-changes" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(34,211,238,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9A9 9 0 0120.5 15M20.49 15A9 9 0 013.5 9"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Changes To Terms</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-3">
+              <p>We reserve the right to update these Terms of Service at any time. When we do, we will update the "Last Updated" date at the top of this page.</p>
+              <p>For active clients, material changes will be communicated by email with reasonable notice. Continued use of our services after changes are posted constitutes acceptance of the updated terms.</p>
+              <p>If you disagree with any changes, you may terminate your service agreement in accordance with the Termination clause.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Contact -->
+        <div id="t-contact" class="glass rounded-2xl overflow-hidden fade-up">
+          <button class="acc-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleAcc(this)">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(108,60,247,0.12)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <span class="font-semibold text-white text-sm">Contact Information</span>
+            </div>
+            <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div class="accordion-content">
+            <div class="px-5 pb-5 text-slate-400 text-sm leading-relaxed space-y-2">
+              <p>For questions about these terms, please contact us:</p>
+              <p><span class="text-white font-medium">Company:</span> ScaleStack Solutions</p>
+              <p><span class="text-white font-medium">Email:</span> <a href="mailto:support@scalestacksolutions.com" class="text-cyan-400 hover:underline">support@scalestacksolutions.com</a></p>
+              <p><span class="text-white font-medium">Website:</span> <a href="index.html#contact" class="text-cyan-400 hover:underline">scalestacksolutions.com/contact</a></p>
+              <p class="mt-3">We aim to respond to all enquiries within 2 business days.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /accordion -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SECTION 6 · SERVICE COMMITMENT
+════════════════════════════════ -->
+<section class="py-16 px-4 relative overflow-hidden">
+  <div class="orb w-80 h-80 -left-20 top-0" style="background:rgba(108,60,247,0.2)"></div>
+  <div class="orb w-64 h-64 -right-16 bottom-0" style="background:rgba(34,211,238,0.12);animation-delay:3s"></div>
+  <div class="max-w-5xl mx-auto relative z-10">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">Our Promise</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">Our <span class="grad-text">Commitment</span> To Clients</h2>
+      <p class="text-slate-400 mt-3 text-sm max-w-xl mx-auto">These terms define legal obligations — but this is what we truly stand for.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="service-card glass rounded-2xl p-6 fade-up group">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(108,60,247,0.1))">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="font-bold text-white mb-2 text-sm">Transparency</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">We tell you exactly what we're doing and why. No smoke and mirrors — just clear, honest reporting.</p>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 fade-up delay-100 group">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,rgba(108,60,247,0.2),rgba(34,211,238,0.1))">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3 class="font-bold text-white mb-2 text-sm">Communication</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Proactive updates, fast response times, and honest conversations — always. You're never left wondering.</p>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 fade-up delay-200 group">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(108,60,247,0.1))">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3 class="font-bold text-white mb-2 text-sm">Professional Standards</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Every deliverable is held to the highest standard. We take pride in the quality of our work.</p>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 fade-up delay-300 group">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,rgba(108,60,247,0.2),rgba(34,211,238,0.1))">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.8"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3 class="font-bold text-white mb-2 text-sm">Continuous Improvement</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">We continuously optimise campaigns, refine systems, and improve results — never set-and-forget.</p>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 fade-up delay-400 group">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,rgba(34,211,238,0.2),rgba(108,60,247,0.1))">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 class="font-bold text-white mb-2 text-sm">Customer Success</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">Your growth is our growth. We measure our success by the results we deliver for you.</p>
+      </div>
+
+      <div class="service-card glass rounded-2xl p-6 fade-up delay-500 group">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,rgba(108,60,247,0.2),rgba(34,211,238,0.1))">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 class="font-bold text-white mb-2 text-sm">Ethical Practices</h3>
+        <p class="text-slate-400 text-xs leading-relaxed">We follow platform guidelines, respect data privacy, and operate with integrity in everything we do.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SECTION 7 · FAQ
+════════════════════════════════ -->
+<section class="py-16 px-4 relative">
+  <div class="orb w-72 h-72 left-1/2 -translate-x-1/2 top-0" style="background:rgba(108,60,247,0.14)"></div>
+  <div class="max-w-3xl mx-auto relative z-10">
+    <div class="text-center mb-12 fade-up">
+      <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-4">
+        <span class="text-xs font-medium" style="color:var(--cyan)">FAQ</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold">Common <span class="grad-text">Questions</span></h2>
+    </div>
+
+    <div class="space-y-3">
+
+      <div class="glass rounded-2xl overflow-hidden fade-up">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">Do you guarantee results?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">We do not guarantee specific revenue, lead numbers, or ROAS figures. Advertising and digital marketing results depend on many factors including market conditions, offer quality, and budget. What we do guarantee is professional effort, honest reporting, and continuous optimisation.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-100">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">Who owns my website after it's built?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">You do — once the project is paid in full. All custom code, design, and content created for your website becomes your property. We may retain the right to display the work in our portfolio unless you request otherwise in writing.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-200">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">Can I cancel my services?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">Yes. Ongoing retainer services can be cancelled with the agreed notice period (typically 30 days) provided in writing. One-time project fees for work already completed are non-refundable. We'll always handle cancellations professionally and ensure a smooth transition.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-300">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">What happens if ad platforms change their policies?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">Platform policy changes are outside our control. If a campaign is suspended or restricted due to platform policy changes, we will notify you immediately and work to resolve the issue. We are not liable for losses caused by platform changes, but we will always act swiftly to protect your campaigns.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-400">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">Do I own the AI automation systems we build?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">Yes, upon full payment you own the custom automation workflows we build for you. Note that some systems run on third-party platforms (like GoHighLevel) which have their own licencing. We'll clearly explain what you own outright versus what requires an ongoing platform subscription.</p>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl overflow-hidden fade-up delay-500">
+        <button class="faq-btn w-full flex items-center justify-between p-5 text-left" onclick="toggleFaq(this)">
+          <span class="font-semibold text-white text-sm">How are payments handled?</span>
+          <svg class="accordion-icon w-4 h-4 text-slate-400 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-content">
+          <p class="px-5 pb-5 text-slate-400 text-sm leading-relaxed">We invoice via email with clear due dates. Projects typically require a deposit upfront with the balance due on completion or at defined milestones. Retainers are billed monthly. We accept bank transfer and card payments. Late fees may apply on overdue invoices.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SECTION 8 · FINAL CTA
+════════════════════════════════ -->
+<section class="py-20 px-4 relative overflow-hidden">
+  <div class="orb w-80 h-80 left-0 top-1/2 -translate-y-1/2"  style="background:rgba(108,60,247,0.3)"></div>
+  <div class="orb w-64 h-64 right-0 top-1/2 -translate-y-1/2" style="background:rgba(34,211,238,0.18);animation-delay:3s"></div>
+
+  <!-- Floating dots -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute w-2 h-2 rounded-full top-1/4 left-1/4 animate-ping" style="background:rgba(108,60,247,0.4);animation-duration:3s"></div>
+    <div class="absolute w-1.5 h-1.5 rounded-full bottom-1/4 right-1/3 animate-ping" style="background:rgba(34,211,238,0.4);animation-duration:2.5s;animation-delay:1s"></div>
+    <div class="absolute w-1 h-1 rounded-full top-1/3 right-1/4 animate-ping" style="background:rgba(139,92,246,0.5);animation-duration:4s;animation-delay:2s"></div>
+  </div>
+
+  <div class="max-w-3xl mx-auto text-center relative z-10">
+    <div class="glass rounded-3xl p-10 sm:p-14 fade-up" style="border-color:rgba(108,60,247,0.25)">
+      <div class="flex justify-center mb-6">
+        <div class="w-16 h-16 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,rgba(108,60,247,0.3),rgba(34,211,238,0.15));border:1px solid rgba(108,60,247,0.3)">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#ctaG)" stroke-width="1.8">
+            <defs><linearGradient id="ctaG" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#6c3cf7"/></linearGradient></defs>
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+        </div>
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Questions About <span class="grad-text">Our Terms?</span></h2>
+      <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mb-8">We believe in transparency and are happy to answer any questions about our services and policies. No question is too small.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="contact.html"  class="btn-primary text-white font-semibold px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">Contact Us</a>
+        <a href="index.html#contact"  class="btn-outline text-white font-medium px-8 py-3.5 rounded-xl text-sm w-full sm:w-auto text-center">Book Strategy Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════
+     SECTION 9 · FOOTER
+════════════════════════════════ -->
+<footer class="relative pt-16 pb-8 px-4 border-t" style="border-color:rgba(255,255,255,0.06)">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 mb-4">
+          <span class="text-lg font-extrabold tracking-tight">
+            <span class="text-white">Scale</span><span style="background:linear-gradient(90deg,#22d3ee,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Stack</span>
+          </span>
+        </a>
+        <p class="text-slate-400 text-sm leading-relaxed mb-5">AI-powered growth agency helping businesses scale with websites, ads, and automation.</p>
+        <div class="flex gap-3">
+          <a href="#" aria-label="Facebook" class="w-8 h-8 glass rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="text-slate-400"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="w-8 h-8 glass rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-slate-400"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-8 h-8 glass rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" class="text-slate-400"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Services</p>
+        <ul class="space-y-2.5">
+          <li><a href="index.html#services" class="text-slate-400 text-sm hover:text-white transition-colors">Website Development</a></li>
+          <li><a href="index.html#services" class="text-slate-400 text-sm hover:text-white transition-colors">Paid Advertising</a></li>
+          <li><a href="index.html#services" class="text-slate-400 text-sm hover:text-white transition-colors">AI Automation</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Quick Links</p>
+        <ul class="space-y-2.5">
+          <li><a href="index.html"          class="text-slate-400 text-sm hover:text-white transition-colors">Home</a></li>
+          <li><a href="services.html" class="text-slate-400 text-sm hover:text-white transition-colors">Services</a></li>
+          <li><a href="index.html#pricing"  class="text-slate-400 text-sm hover:text-white transition-colors">Pricing</a></li>
+          <li><a href="process.html"  class="text-slate-400 text-sm hover:text-white transition-colors">Process</a></li>
+          <li><a href="contact.html"  class="text-slate-400 text-sm hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <p class="text-sm font-semibold text-white mb-4">Legal</p>
+        <ul class="space-y-2.5">
+          <li><a href="privacypolicy.html" class="text-slate-400 text-sm hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="terms.html"          class="text-cyan-400 text-sm font-medium">Terms of Service</a></li>
+        </ul>
+        <div class="mt-6">
+          <a href="index.html#contact" class="btn-primary text-white text-xs font-semibold px-4 py-2 rounded-lg inline-block">Book Free Call →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style="border-color:rgba(255,255,255,0.06)">
+      <p class="text-slate-500 text-xs">© 2025 ScaleStack Solutions. All rights reserved.</p>
+      <p class="text-slate-500 text-xs">Built to scale your business faster.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════ -->
+<script>
+// ── Navbar scroll ─────────────────────────────
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ── Hamburger ─────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const h1 = document.getElementById('h1');
+const h2 = document.getElementById('h2');
+const h3 = document.getElementById('h3');
+let menuOpen = false;
+
+hamburger.addEventListener('click', () => {
+  menuOpen = !menuOpen;
+  mobileMenu.classList.toggle('open', menuOpen);
+  h1.style.transform = menuOpen ? 'rotate(45deg) translateY(7px)' : '';
+  h2.style.opacity   = menuOpen ? '0' : '1';
+  h3.style.transform = menuOpen ? 'rotate(-45deg) translateY(-7px)' : '';
+});
+
+// Close menu on link click
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    menuOpen = false;
+    mobileMenu.classList.remove('open');
+    h1.style.transform = h3.style.transform = '';
+    h2.style.opacity = '1';
+  });
+});
+
+// ── Terms accordion (single open) ────────────
+function toggleAcc(btn) {
+  const content = btn.nextElementSibling;
+  const icon    = btn.querySelector('.accordion-icon');
+  const isOpen  = content.classList.contains('open');
+
+  document.querySelectorAll('.acc-btn').forEach(b => {
+    b.nextElementSibling.classList.remove('open');
+    b.querySelector('.accordion-icon').classList.remove('open');
+  });
+
+  if (!isOpen) {
+    content.classList.add('open');
+    icon.classList.add('open');
+  }
+}
+
+// ── FAQ accordion (single open) ───────────────
+function toggleFaq(btn) {
+  const content = btn.nextElementSibling;
+  const icon    = btn.querySelector('.accordion-icon');
+  const isOpen  = content.classList.contains('open');
+
+  document.querySelectorAll('.faq-btn').forEach(b => {
+    b.nextElementSibling.classList.remove('open');
+    b.querySelector('.accordion-icon').classList.remove('open');
+  });
+
+  if (!isOpen) {
+    content.classList.add('open');
+    icon.classList.add('open');
+  }
+}
+
+// ── Scroll reveal ─────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
+
+// ── Sticky TOC active link ────────────────────
+const tocSections = document.querySelectorAll('[id^="t-"]');
+const tocLinks    = document.querySelectorAll('.toc-link');
+
+const tocObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      tocLinks.forEach(l => l.classList.remove('active'));
+      const active = document.querySelector(`.toc-link[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, { rootMargin: '-35% 0px -55% 0px' });
+
+tocSections.forEach(s => tocObserver.observe(s));
+
+// ── Smooth scroll ─────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+</script>
+</body>
+</html>
