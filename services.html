@@ -7,8 +7,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    * { font-family: 'Inter', sans-serif; box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #040D21; color: #fff; overflow-x: hidden; }
+    * { font-family: 'Inter', sans-serif; box-sizing: border-box; margin: 0; padding: 0; max-width: 100%; }
+    html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
+    body { background: #040D21; color: #fff; }
+    img, svg { max-width: 100%; height: auto; }
 
     .grad { background: linear-gradient(135deg,#38BDF8 0%,#818CF8 50%,#A78BFA 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
@@ -34,8 +36,11 @@
       .mobile-menu .mob-cta { background:linear-gradient(135deg,#6366F1,#818CF8); color:#fff; padding:12px 20px; border-radius:8px; text-align:center; font-weight:600; margin-top:8px; }
     }
 
-    .container { max-width:1200px; margin:0 auto; padding:0 24px; }
-    .orb { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; }
+    .container { max-width:1200px; margin:0 auto; padding:0 24px; width:100%; }
+    .orb { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; z-index:0; }
+    @media(max-width:768px){
+      .orb { width:240px !important; height:240px !important; filter:blur(60px); }
+    }
 
     /* BUTTONS */
     .btn-primary { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#6366F1,#818CF8); color:#fff; font-weight:700; padding:14px 28px; border-radius:10px; text-decoration:none; transition:transform .2s,box-shadow .2s; box-shadow:0 4px 24px rgba(99,102,241,.35); font-size:0.95rem; }
@@ -84,7 +89,7 @@
     .platform-pill { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:100px; padding:8px 16px; font-size:0.82rem; font-weight:600; color:rgba(255,255,255,.8); display:inline-flex; align-items:center; gap:7px; }
     .platform-pill svg { width:14px; height:14px; }
 
-    .service-section { padding:100px 0; }
+    .service-section { padding:100px 0; position:relative; overflow:hidden; }
     @media(max-width:768px){ .service-section { padding:70px 0; } }
 
     .reveal { opacity:0; transform:translateY(28px); transition:opacity .6s ease,transform .6s ease; }
@@ -557,7 +562,7 @@
     <div class="reveal">
       <div class="faq-item">
         <button class="faq-btn" onclick="toggleFaq(this)"><span>How long does a website take to build?</span><div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="6" x2="10" y2="6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
-        <div class="faq-body">Most websites are completed within 2–4 weeks depending on complexity. After our discovery call, we'll give you a precise timeline tailored to your project scope.</div>
+        <div class="faq-body">Most website projects are completed within 2–9 days, depending on the number of pages and required features</div>
       </div>
       <div class="faq-item">
         <button class="faq-btn" onclick="toggleFaq(this)"><span>How much ad budget do I need?</span><div class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><line x1="6" y1="2" x2="6" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="2" y1="6" x2="10" y2="6" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div></button>
